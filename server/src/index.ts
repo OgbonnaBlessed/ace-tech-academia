@@ -49,7 +49,7 @@ app.use("/transactions", requireAuth(), transactionRoutes);
 app.use("/users/course-progress", requireAuth(), userCourseProgressRoutes);
 
 /* Server */
-const port = parseInt(process.env.PORT || "8001", 10);
+const port = 8001
 if (!isProduction) {
   app.listen(port, () => {
     console.log(`Server running on port ${port}`);
