@@ -11,7 +11,6 @@ import { cn } from '@/src/lib/utils';
 const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
     const { user } = useUser();
     const userRole = user?.publicMetadata?.userType as "student" | "teacher";
-    console.log("userRole", userRole)
 
     return (
         <nav className='dashboard-navbar'>

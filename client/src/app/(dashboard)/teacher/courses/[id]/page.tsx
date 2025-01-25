@@ -153,9 +153,10 @@ const CourseEditor = () => {
                                     type="select"
                                     placeholder="Select category here"
                                     options={[
-                                        { value: "technology", label: "Technology" },
-                                        { value: "science", label: "Science" },
-                                        { value: "mathematics", label: "Mathematics" },
+                                        { value: "web development", label: "Web Development" },
+                                        { value: "data analysis", label: "Data Analysis" },
+                                        { value: "cloud computing", label: "Cloud Computing" },
+                                        { value: "cyber security", label: "Cyber Security" },
                                         { value: "Artificial Intelligence", label: "Artificial Intelligence", },
                                     ]}
                                     initialValue={course?.category}

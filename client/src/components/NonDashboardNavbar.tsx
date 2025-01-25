@@ -9,7 +9,6 @@ import React from 'react'
 const NonDashboardNavbar = () => {
     const { user } = useUser();
     const userRole = user?.publicMetadata?.userType as "student" | "teacher";
-    console.log("user?.publicMetadata?.userType:", user?.publicMetadata?.userType);
 
     return (
         <nav className='nondashboard-navbar'>
@@ -20,7 +19,8 @@ const NonDashboardNavbar = () => {
                         scroll={false}
                         className='nondashboard-navbar__brand'
                     >
-                        ACE TECH ACADEMIA
+                        <span className='md:hidden'>ACE</span>
+                        <span className='hidden md:block'>ACE TECH ACADEMIA</span>
                     </Link>
                     <div className='flex items-center gap-4'>
                         <div className='group relative'>

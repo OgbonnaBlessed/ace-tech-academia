@@ -226,20 +226,12 @@ input[type="color"] {
   @apply w-3/4;
 }
 
-.landing__hero {
-  @apply flex justify-between items-center mt-12 h-[500px] rounded-lg bg-customgreys-secondarybg;
-}
-
-.landing__hero-content {
-  @apply basis-1/2 px-16 mx-auto;
-}
-
 .landing__title {
-  @apply text-4xl font-bold mb-4;
+  @apply md:text-4xl text-2xl font-bold mb-4;
 }
 
 .landing__description {
-  @apply text-lg text-gray-400 mb-8;
+  @apply md:text-lg text-gray-400 mb-8;
 }
 
 .landing__cta {
@@ -247,15 +239,23 @@ input[type="color"] {
 }
 
 .landing__cta-button {
-  @apply bg-primary-700 hover:bg-primary-600 px-4 py-2 rounded-md;
+  @apply bg-primary-700 hover:bg-primary-600 px-4 py-2 rounded-md max-xl:text-[0.75rem] max-xl:px-2 max-xl:py-1 max-xl:rounded-sm;
+}
+
+.landing__hero {
+  @apply flex justify-between md:items-center items-start mt-12 md:h-[500px] rounded-lg bg-customgreys-secondarybg max-md:flex-col max-md:h-auto max-md:p-6;
+}
+
+.landing__hero-content {
+  @apply basis-1/2 md:px-16 max-md:mb-6;
 }
 
 .landing__hero-images {
-  @apply basis-1/2 h-full relative overflow-hidden rounded-r-lg;
+  @apply basis-1/2 h-full relative overflow-hidden rounded-r-lg max-md:w-full max-md:h-auto max-md:aspect-[16/9] max-md:rounded-lg;
 }
 
 .landing__hero-image {
-  @apply object-cover transition-opacity duration-500 opacity-0;
+  @apply object-cover transition-opacity duration-500 opacity-0 max-md:relative max-md:h-auto;
 }
 
 .landing__hero-image--active {
@@ -279,7 +279,7 @@ input[type="color"] {
 }
 
 .landing__tag {
-  @apply px-3 py-1 bg-customgreys-secondarybg rounded-full text-sm;
+  @apply px-3 py-1 bg-customgreys-secondarybg rounded-md text-sm;
 }
 
 .landing__courses {
@@ -292,11 +292,11 @@ input[type="color"] {
 }
 
 .landing-skeleton__hero {
-  @apply flex justify-between items-center mt-12 h-[500px] rounded-lg bg-customgreys-secondarybg;
+  @apply flex justify-between md:items-center items-start mt-12 md:h-[500px] rounded-lg bg-customgreys-secondarybg max-md:flex-col max-md:h-auto max-md:p-6;
 }
 
 .landing-skeleton__hero-content {
-  @apply basis-1/2 px-16 mx-auto;
+  @apply basis-1/2 md:px-16 max-md:mb-6;
 }
 
 .landing-skeleton__title {
@@ -304,19 +304,19 @@ input[type="color"] {
 }
 
 .landing-skeleton__subtitle {
-  @apply h-4 w-96 mb-2;
+  @apply h-4 w-full max-w-sm mb-2;
 }
 
 .landing-skeleton__subtitle-secondary {
-  @apply h-4 w-72 mb-8;
+  @apply h-4 mb-8;
 }
 
 .landing-skeleton__button {
-  @apply w-40 h-10;
+  @apply w-40 h-10 rounded-md;
 }
 
 .landing-skeleton__hero-image {
-  @apply basis-1/2 h-full rounded-r-lg;
+  @apply basis-1/2 h-full relative overflow-hidden rounded-r-lg max-md:w-full max-md:h-auto max-md:aspect-[16/9] max-md:rounded-lg;
 }
 
 .landing-skeleton__featured {
@@ -328,7 +328,7 @@ input[type="color"] {
 }
 
 .landing-skeleton__featured-description {
-  @apply h-4 w-full max-w-2xl mb-8;
+  @apply h-4 w-full max-w-2xl mb-8 text-customgreys-dirtyGrey;
 }
 
 .landing-skeleton__tags {
@@ -336,7 +336,7 @@ input[type="color"] {
 }
 
 .landing-skeleton__tag {
-  @apply w-24 h-6 rounded-full;
+  @apply w-24 h-6 rounded-md bg-customgreys-secondarybg;
 }
 
 .landing-skeleton__courses {
@@ -344,7 +344,7 @@ input[type="color"] {
 }
 
 .landing-skeleton__course-card {
-  @apply h-[300px] rounded-lg;
+  @apply h-[300px] rounded-lg bg-customgreys-secondarybg;
 }
 
 /* Checkout Details Page */
@@ -1228,7 +1228,7 @@ input[type="color"] {
 }
 
 .nondashboard-navbar__notification-button {
-  @apply relative w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center;
+  @apply relative w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center max-sm:hidden;
 }
 
 .nondashboard-navbar__notification-indicator {
@@ -1298,7 +1298,7 @@ input[type="color"] {
 }
 
 .course-card-teacher__category {
-  @apply bg-customgreys-dirtyGrey/50 px-2 py-1 mt-3 mb-3 rounded-xl w-fit text-sm;
+  @apply bg-customgreys-dirtyGrey/50 px-2 py-1 mt-3 mb-3 rounded-md w-fit text-sm;
 }
 
 .course-card-teacher__edit-button {

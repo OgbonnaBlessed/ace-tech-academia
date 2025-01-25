@@ -32,7 +32,7 @@ export default function DashboardLayout({
     }, [isCoursePage, pathname]);
 
     if (!isLoaded) return <Loading />;
-    if (!user) return <div>Please sign in to access this page.</div>;
+    if (!user) return <div className="w-full min-h-screen flex items-center justify-center">Please sign in to access this page.</div>;
 
     return (
         <SidebarProvider>

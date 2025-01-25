@@ -1,8 +1,8 @@
-import { useClerk, useUser } from '@clerk/nextjs'
+import { useUser } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation';
 import React from 'react'
 import { SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from './ui/sidebar';
-import { BookOpen, Briefcase, DollarSign, LogOut, PanelLeft, Settings, User } from 'lucide-react';
+import { BookOpen, Briefcase, DollarSign, HomeIcon, PanelLeft, Settings, User } from 'lucide-react';
 import Loading from './Loading';
 import { Sidebar } from './ui/sidebar';
 import Image from 'next/image';
@@ -11,7 +11,6 @@ import Link from 'next/link';
 
 const AppSidebar = () => {
     const { user, isLoaded } = useUser();
-    const { signOut } = useClerk();
     const pathname = usePathname();
     const { toggleSidebar } = useSidebar();
 
@@ -114,13 +113,13 @@ const AppSidebar = () => {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
-                            <button
-                                onClick={() => signOut()}
+                            <Link
+                                href="/"
                                 className='app-sidebar__signout'
                             >
-                                <LogOut className='mr-2 h-6 w-6' />
-                                <span>Sign out</span>
-                            </button>
+                                <HomeIcon className='mr-2 h-6 w-6' />
+                                <span>Home</span>
+                            </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>

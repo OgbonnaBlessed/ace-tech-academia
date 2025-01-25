@@ -69,11 +69,11 @@ const Landing = () => {
                 className='landing__hero'
             >
                 <div className='landing__hero-content'>
-                    <h1 className='landing__title'>Courses</h1>
+                    <h1 className='landing__title'>Ace Your Career</h1>
                     <p className='landing__description'>
-                        This is the list of the courses you can enroll in.
+                        Discover courses tailored to your growth,
                         <br />
-                        Courses when you need them and want them.
+                        and achieve more than you imagined.
                     </p>
                     <div className='landing__cta'>
                         <Link
@@ -109,16 +109,16 @@ const Landing = () => {
             >
                 <h2 className='landing__featured-title'>Featured Courses</h2>
                 <p className='landing__featured-description'>
-                    From beginner to advanced, in all industries, we have the right courses just for you and preparing your entire journey for learning and making the most.
+                    Whether you’re a beginner or an expert, our courses are crafted to meet your needs across all industries. Start your journey with us and unlock your full potential.
                 </p>
 
                 <div className='landing__tags'>
                     {[
-                        "web development",
-                        "enterprise IT",
-                        "react nextjs",
-                        "javascript",
-                        "backend development",
+                        "Web Development",
+                        "Data Analysis",
+                        "Cloud Computing",
+                        "Cybersecurity",
+                        "Artificial Intelligence",
                     ].map((tag, index) => (
                         <span
                             key={index}
