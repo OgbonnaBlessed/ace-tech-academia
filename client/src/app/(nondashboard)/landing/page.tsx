@@ -10,6 +10,7 @@ import { useGetCoursesQuery } from '@/src/state/api';
 import CourseCardSearch from '@/src/components/CourseCardSearch';
 import { useRouter } from 'next/navigation';
 import Testimonials from '@/src/components/Testimonials';
+import FAQ from '@/src/components/FAQ';
 
 const LoadingSkeleton = () => {
     return (
@@ -149,6 +150,7 @@ const Landing = () => {
                 </div>
             </motion.div>
             <Testimonials />
+            <FAQ />
         </motion.div>
     )
 }
