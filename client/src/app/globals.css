@@ -347,6 +347,47 @@ input[type="color"] {
   @apply h-[300px] rounded-lg bg-customgreys-secondarybg;
 }
 
+/* Laning Page Testimonials */
+.landing__testimonials {
+  @apply py-12 mt-10 rounded-lg;
+}
+
+.landing__testimonials-title {
+  @apply text-2xl font-semibold mb-4 text-white-50;
+}
+
+.landing__testimonials-description {
+  @apply text-customgreys-dirtyGrey mb-8 max-w-2xl;
+}
+
+.landing__testimonials-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-6xl;
+}
+
+.landing__testimonial-card {
+  @apply bg-customgreys-secondarybg hover:bg-white-100/10 transition duration-200 cursor-pointer p-6 rounded-lg shadow-md text-left flex flex-col justify-between;
+}
+
+.landing__testimonial-content {
+  @apply mb-4 text-white-50;
+}
+
+.landing__testimonial-author-info {
+  @apply flex items-center gap-2;
+}
+
+.landing__testimonial-author-image {
+  @apply w-12 h-12 rounded-full object-cover;
+}
+
+.landing__testimonial-author {
+  @apply font-medium text-primary-700 mt-2;
+}
+
+.landing__testimonial-role {
+  @apply text-sm text-gray-400;
+}
+
 /* Checkout Details Page */
 .checkout-details {
   @apply w-full h-fit gap-10;

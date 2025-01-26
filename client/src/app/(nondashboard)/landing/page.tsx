@@ -9,6 +9,7 @@ import { Skeleton } from '@/src/components/ui/skeleton';
 import { useGetCoursesQuery } from '@/src/state/api';
 import CourseCardSearch from '@/src/components/CourseCardSearch';
 import { useRouter } from 'next/navigation';
+import Testimonials from '@/src/components/Testimonials';
 
 const LoadingSkeleton = () => {
     return (
@@ -147,6 +148,7 @@ const Landing = () => {
                         ))}
                 </div>
             </motion.div>
+            <Testimonials />
         </motion.div>
     )
 }
