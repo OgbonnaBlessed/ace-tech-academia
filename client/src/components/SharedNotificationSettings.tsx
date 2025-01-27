@@ -47,6 +47,8 @@ const SharedNotificationSettings = ({
 
         try {
             await updateUser(updatedUser);
+
+            window.location.reload();
         } catch (error) {
             console.error("Failed to update user settings: ", error);
         }

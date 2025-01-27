@@ -71,6 +71,12 @@ const UserBilling = () => {
                         >
                             Paypal
                         </SelectItem>
+                        <SelectItem 
+                            className="billing__select-item" 
+                            value="paystack"
+                        >
+                            Paystack
+                        </SelectItem>
                     </SelectContent>
                 </Select>
             </div>
