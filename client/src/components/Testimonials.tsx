@@ -42,8 +42,9 @@ const Testimonials = () => {
                     <motion.div
                         key={index}
                         initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
+                        viewport={{ amount: 0.4 }}
                         className="landing__testimonial-card"
                     >
                         <p className="landing__testimonial-content">{`"${testimonial.content}"`}</p>

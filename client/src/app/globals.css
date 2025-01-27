@@ -263,7 +263,7 @@ input[type="color"] {
 }
 
 .landing__featured {
-  @apply mx-auto py-12 mt-10;
+  @apply mx-auto py-20 mt-10;
 }
 
 .landing__featured-title {
@@ -349,7 +349,7 @@ input[type="color"] {
 
 /* Laning Page Testimonials */
 .landing__testimonials {
-  @apply py-12 mt-10 rounded-lg;
+  @apply py-28 rounded-lg;
 }
 
 .landing__testimonials-title {

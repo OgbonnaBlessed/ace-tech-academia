@@ -63,7 +63,7 @@ const FAQ = () => {
             {
             question: "What should I do if I encounter technical issues?",
             answer:
-                "If you encounter any technical issues, contact our support team through the 'Help Center' or email support@example.com.",
+                "If you encounter any technical issues, contact our support team through the 'Help Center' or email support@acetechacademia.com.",
             },
             {
             question: "Which browsers are supported?",
@@ -91,7 +91,7 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto px-4 py-20">
             <h2 className="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
             <Accordion type="multiple">
                 {faqSections.map((section) => (
