@@ -988,6 +988,37 @@ input[type="color"] {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 mt-6 w-full;
 }
 
+/* Modal Overlay */
+.modal-overlay {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+}
+
+/* Modal Content */
+.modal-content {
+  @apply bg-customgreys-secondarybg rounded-lg shadow-lg p-6 w-96 flex flex-col gap-3;
+}
+
+.modal-content h3 {
+  @apply text-lg font-bold;
+}
+
+.modal-content p {
+  @apply text-sm text-white-100 mb-6;
+}
+
+.modal-actions {
+  @apply flex justify-end gap-4;
+}
+
+/* Button styles for modal actions */
+.btn-danger {
+  @apply bg-red-600 text-white-50 px-4 py-2 rounded hover:bg-red-600;
+}
+
+.btn-secondary {
+  @apply bg-white-50 text-black px-4 py-2 rounded hover:bg-white-100 hover:text-white-50;
+}
+
 /* Accordion Sections */
 .accordion-section {
   @apply border-x border-b border-gray-600 overflow-hidden first:border-t first:rounded-t-lg last:rounded-b-lg;
@@ -1065,7 +1096,7 @@ input[type="color"] {
 
 /* Course Card Teacher */
 .course-card-teacher {
-  @apply w-full h-[400px] p-0 bg-background border-none text-foreground bg-customgreys-primarybg overflow-hidden hover:bg-white-100/10 transition duration-200 flex flex-col;
+  @apply w-full h-[400px] p-0 bg-background border-none text-foreground bg-customgreys-primarybg overflow-hidden flex flex-col;
 }
 
 .course-card-teacher__header {
@@ -1351,11 +1382,11 @@ input[type="color"] {
 }
 
 .course-card-teacher__edit-button {
-  @apply rounded w-full bg-primary-700 border-none hover:bg-primary-600 hover:text-customgreys-primarybg text-white-100 cursor-pointer;
+  @apply rounded w-full bg-primary-700 border-none hover:bg-primary-600 hover:text-white-50 text-white-100 cursor-pointer flex gap-2 items-center;
 }
 
 .course-card-teacher__delete-button {
-  @apply rounded w-full bg-red-600 text-white-100 hover:bg-red-400 hover:text-customgreys-primarybg cursor-pointer;
+  @apply rounded w-full bg-red-600 text-white-100 hover:bg-red-400 hover:text-white-50 cursor-pointer flex gap-2 items-center;
 }
 
 /* NonDashboard Navbar Additional Classes */

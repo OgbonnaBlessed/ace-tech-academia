@@ -80,6 +80,7 @@ const Search = () => {
             />
             <div className='search__content'>
                 <motion.div
+                    key={`${searchTerm}-${selectedCategory}`}
                     initial={{ y: 40, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
@@ -97,6 +98,7 @@ const Search = () => {
 
                 {selectedCourse && (
                     <motion.div
+                        key={selectedCourse.courseId}
                         initial={{ y: 40, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.5 }}

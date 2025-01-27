@@ -71,7 +71,7 @@ const TeacherCourseCard = ({
                   className="course-card-teacher__edit-button"
                   onClick={() => onEdit(course)}
                 >
-                  <Pencil className="w-4 h-4 mr-2" />
+                  <Pencil className="w-4 h-4" />
                   Edit
                 </Button>
               </div>
@@ -80,7 +80,7 @@ const TeacherCourseCard = ({
                   className="course-card-teacher__delete-button"
                   onClick={() => onDelete(course)}
                 >
-                  <Trash2 className="w-4 h-4 mr-2" />
+                  <Trash2 className="w-4 h-4" />
                   Delete
                 </Button>
               </div>
