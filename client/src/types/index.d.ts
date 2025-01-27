@@ -169,6 +169,7 @@ declare global {
   interface ToolbarProps {
     onSearch: (search: string) => void;
     onCategoryChange: (category: string) => void;
+    currentPage: string;
   }
 
   interface ChapterModalProps {

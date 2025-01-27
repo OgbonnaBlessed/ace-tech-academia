@@ -3,16 +3,19 @@
 import Loading from '@/src/components/Loading';
 import { useGetCoursesQuery } from '@/src/state/api';
 import { useSearchParams, useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion';
 import CourseCardSearch from '@/src/components/CourseCardSearch';
 import SelectedCourse from './SelectedCourse';
+import Toolbar from '@/src/components/Toolbar';
 
 const Search = () => {
     const searchParams = useSearchParams();
     const id = searchParams.get("id");
     const { data: courses, isLoading, isError } = useGetCoursesQuery({});
     const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("all");
     const router = useRouter();
 
     useEffect(() => {
@@ -25,6 +28,26 @@ const Search = () => {
             }
         }
     }, [courses, id]);
+
+    const filteredCourses = useMemo(() => {
+        if (!courses) return [];
+    
+        return courses.filter((course) => {
+          const matchesSearch = course.title
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+          const matchesCategory =
+            selectedCategory === "all" || course.category === selectedCategory;
+          return matchesSearch && matchesCategory;
+        });
+    }, [courses, searchTerm, selectedCategory]);
+    
+    // Automatically set the first course as the selected course when filtering
+    useEffect(() => {
+        if (filteredCourses.length > 0) {
+            setSelectedCourse(filteredCourses[0]);
+        }
+    }, [filteredCourses]);
 
     if (isLoading) return <Loading />
 
@@ -49,7 +72,12 @@ const Search = () => {
             className='search'
         >
             <h1 className='search__title'>List of available courses</h1>
-            <h2 className='search__subtitle'>{courses.length} courses available</h2>
+            <h2 className='search__subtitle'>{filteredCourses.length} courses available</h2>
+            <Toolbar
+                onSearch={setSearchTerm}
+                onCategoryChange={setSelectedCategory}
+                currentPage='search'
+            />
             <div className='search__content'>
                 <motion.div
                     initial={{ y: 40, opacity: 0 }}
@@ -57,7 +85,7 @@ const Search = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className='search__courses-grid'
                 >
-                    {courses.map((course) => (
+                    {filteredCourses.map((course) => (
                         <CourseCardSearch
                             key={course.courseId}
                             course={course}

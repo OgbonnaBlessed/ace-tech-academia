@@ -157,7 +157,7 @@ const CourseEditor = () => {
                                         { value: "data analysis", label: "Data Analysis" },
                                         { value: "cloud computing", label: "Cloud Computing" },
                                         { value: "cyber security", label: "Cyber Security" },
-                                        { value: "Artificial Intelligence", label: "Artificial Intelligence", },
+                                        { value: "artificial intelligence", label: "Artificial Intelligence", },
                                     ]}
                                     initialValue={course?.category}
                                 />

@@ -82,6 +82,7 @@ const Courses = () => {
             <Toolbar
                 onSearch={setSearchTerm}
                 onCategoryChange={setSelectedCategory}
+                currentPage="courses"
             />
             <div className="teacher-courses__grid">
                 {filteredCourses.map((course) => (

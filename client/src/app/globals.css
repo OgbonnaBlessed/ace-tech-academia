@@ -1044,7 +1044,7 @@ input[type="color"] {
 
 /* Course Card Search */
 .course-card-search {
-  @apply bg-customgreys-secondarybg overflow-hidden rounded-lg hover:bg-white-100/10 transition duration-200 flex flex-col cursor-pointer border-2 h-full;
+  @apply bg-customgreys-secondarybg overflow-hidden rounded-lg hover:bg-white-100/10 transition duration-200 flex flex-col cursor-pointer border-2 h-fit;
 }
 
 .course-card-search--selected {
@@ -1178,8 +1178,16 @@ input[type="color"] {
   @apply w-full px-5 h-12 bg-customgreys-primarybg placeholder-customgreys-dirtyGrey text-customgreys-dirtyGrey border-none rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring;
 }
 
+.toolbar__search--searchPage {
+  @apply w-full px-5 h-12 bg-customgreys-secondarybg placeholder-customgreys-dirtyGrey text-customgreys-dirtyGrey border-none rounded-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring;
+}
+
 .toolbar__select {
   @apply h-12 w-[180px] bg-customgreys-primarybg text-customgreys-dirtyGrey border-none;
+}
+
+.toolbar__select--searchPage {
+  @apply h-12 w-[180px] bg-customgreys-secondarybg text-customgreys-dirtyGrey border-none;
 }
 
 .toolbar__select-item {

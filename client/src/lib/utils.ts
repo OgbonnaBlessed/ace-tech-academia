@@ -241,10 +241,11 @@ export function convertToSubCurrency(amount: number, factor = 100) {
 export const NAVBAR_HEIGHT = 48;
 
 export const courseCategories = [
-  { value: "technology", label: "Technology" },
-  { value: "science", label: "Science" },
-  { value: "mathematics", label: "Mathematics" },
-  { value: "artificial-intelligence", label: "Artificial Intelligence" },
+  { value: "web development", label: "Web Development" },
+  { value: "data analysis", label: "Data Analysis" },
+  { value: "cloud computing", label: "Cloud Computing" },
+  { value: "cyber security", label: "Cyber Security" },
+  { value: "artificial intelligence", label: "Artificial Intelligence" },
 ] as const;
 
 export const customDataGridStyles = {
