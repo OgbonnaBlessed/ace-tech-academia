@@ -3,6 +3,7 @@
 import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
 import { Bell, BookOpen } from 'lucide-react'
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 
@@ -19,7 +20,14 @@ const NonDashboardNavbar = () => {
                         scroll={false}
                         className='nondashboard-navbar__brand'
                     >
-                        <span className='md:hidden'>ACE</span>
+                        <span className='md:hidden'>
+                            <Image 
+                                src="/logo.png"
+                                alt="logo" 
+                                width={120}
+                                height={120}                          
+                            />
+                        </span>
                         <span className='hidden md:block'>ACE TECH ACADEMIA</span>
                     </Link>
                     <div className='flex items-center gap-4'>
