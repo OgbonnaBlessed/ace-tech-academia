@@ -89,11 +89,12 @@ const Landing = () => {
                     </div>
                 </div>
                 <div className='landing__hero-images'>
-                    {["/hero1.jpg", "/hero2.jpg", "/hero3.jpg"].map((src, index) => (
+                    {["/hero1.jpg", "/hero2.jpg", "/hero3.avif"].map((src, index) => (
                         <Image
                             key={src}
                             src={src}
                             alt={`Hero Banner ${index + 1}`}
+                            quality={100}
                             fill
                             priority={index === currentImage}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
