@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   ControllerRenderProps,
   FieldValues,
@@ -77,12 +77,9 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
   imageValue
 }) => {
   const { control, setValue, setError, clearErrors } = useFormContext();
-  const [files, setFiles] = useState<string[]>([]);
-  // console.log("file value:", files);
 
   useEffect(() => {
     if (imageValue) {
-      setFiles([imageValue]);
       setValue(name, imageValue);
     }
   }, [imageValue, name, setValue]);
