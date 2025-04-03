@@ -6,6 +6,7 @@ export const courseSchema = z.object({
   courseDescription: z.string().min(1, "Description is required"),
   courseCategory: z.string().min(1, "Category is required"),
   coursePrice: z.string(),
+  courseImage: z.string().min(1, "Course image is required"),
   courseStatus: z.boolean(),
 });
 

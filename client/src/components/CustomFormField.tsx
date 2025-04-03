@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ControllerRenderProps,
   FieldValues,
@@ -58,6 +58,7 @@ interface FormFieldProps {
   multiple?: boolean;
   isIcon?: boolean;
   initialValue?: string | number | boolean | string[];
+  imageValue?: string;
 }
 
 export const CustomFormField: React.FC<FormFieldProps> = ({
@@ -66,7 +67,6 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
   type = "text",
   placeholder,
   options,
-  accept,
   className,
   inputClassName,
   labelClassName,
@@ -74,8 +74,18 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
   multiple = false,
   isIcon = false,
   initialValue,
+  imageValue
 }) => {
-  const { control } = useFormContext();
+  const { control, setValue, setError, clearErrors } = useFormContext();
+  const [files, setFiles] = useState<string[]>([]);
+  // console.log("file value:", files);
+
+  useEffect(() => {
+    if (imageValue) {
+      setFiles([imageValue]);
+      setValue(name, imageValue);
+    }
+  }, [imageValue, name, setValue]);
 
   const renderFormControl = (
     field: ControllerRenderProps<FieldValues, string>
@@ -129,27 +139,46 @@ export const CustomFormField: React.FC<FormFieldProps> = ({
             </FormLabel>
           </div>
         );
-      case "file":
-        const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/ogg"];
-        const acceptedFileTypes = accept ? [accept] : ACCEPTED_VIDEO_TYPES;
-
-        return (
-          <FilePond
-            className={`${inputClassName}`}
-            files={field.value ? [field.value] : []}
-            allowMultiple={multiple}
-            onupdatefiles={(fileItems) => {
-              field.onChange(
-                multiple
-                  ? fileItems.map((fileItem) => fileItem.file)
-                  : fileItems[0]?.file
-              );
-            }}
-            acceptedFileTypes={acceptedFileTypes}
-            labelIdle={`Drag & Drop your files or <span class="filepond--label-action">Browse</span>`}
-            credits={false}
-          />
-        );
+        case "file":
+          return (
+            <div>
+              <FilePond
+                className={`${inputClassName}`}
+                files={field.value ? [{ source: field.value, options: { type: "local" } }] : []}
+                allowMultiple={multiple}
+                maxFiles={1}
+                onupdatefiles={(fileItems) => {
+                  if (fileItems?.length > 0) {
+                    const file = fileItems[0]?.file;
+        
+                    if (!file || !(file instanceof Blob)) {
+                      console.error("Invalid file selected");
+                      return;
+                    }
+        
+                    // Check file type
+                    if (!file.type.startsWith("image/")) {
+                      setError(name, { type: "manual", message: "Only image files are allowed" });
+                      return;
+                    }
+        
+                    clearErrors(name); // Clear error if file is valid
+                    const reader = new FileReader();
+                    reader.onloadend = () => {
+                      field.onChange(reader.result as string); // Convert file to base64 string
+                    };
+                    reader.readAsDataURL(file);
+                  } else {
+                    field.onChange(""); // Handle empty file case
+                  }
+                }}
+                disabled={disabled}
+                acceptedFileTypes={["image/*"]}
+                labelIdle={`Drag & Drop your image or <span class="filepond--label-action">Browse</span>`}
+                credits={false}
+              />
+            </div>
+          );
       case "number":
         return (
           <Input

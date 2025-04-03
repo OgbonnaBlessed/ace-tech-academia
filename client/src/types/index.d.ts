@@ -205,6 +205,7 @@ declare global {
     courseDescription: string;
     courseCategory: string;
     coursePrice: string;
+    courseImage: string;
     courseStatus: boolean;
   }
 }

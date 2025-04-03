@@ -72,6 +72,7 @@ export const createCourse = async (req: Request, res: Response): Promise<void> =
             enrollments: [],
         })
         await newCourse.save();
+        // console.log()
 
         res.json({ message: "Course created successfully", data: newCourse  })
     } catch (error) {
@@ -85,6 +86,7 @@ export const updateCourse = async (
 ) : Promise<void> => {
     const { courseId } = req.params;
     const updateData = { ...req.body };
+    console.log(updateData);
     const { userId } = getAuth(req);
 
     try {
@@ -97,6 +99,24 @@ export const updateCourse = async (
         if (course.teacherId !== userId) {
             res.status(403).json({ message: "Not authorized to update this course" });
             return;
+        }
+
+        // Handle image upload to S3
+        if (req.file) {
+            const uniqueId = uuidv4();
+            const fileName = req.file.originalname;
+            const s3Key = `images/${uniqueId}/${fileName}`;
+
+            const s3Params = {
+                Bucket: process.env.S3_BUCKET_NAME || "",
+                Key: s3Key,
+                Body: req.file.buffer,
+                ContentType: req.file.mimetype,
+            };
+
+            await s3.upload(s3Params).promise();
+
+            updateData.image = `${process.env.CLOUDFRONT_DOMAIN}/images/${uniqueId}/${fileName}`;
         }
 
         if (updateData.price) {
@@ -133,6 +153,7 @@ export const updateCourse = async (
         res.json({ message: "Course updated successfully", data: course });
     } catch (error) {
         res.status(500).json({ message: "Error updating course", error });
+        console.log(error)
     }
 }
 
