@@ -340,42 +340,5 @@
         ]
       }
     ]
-  },
-  {
-    "courseId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-    "teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
-    "teacherName": "John Doe",
-    "title": "Mobile App Development with React Native",
-    "description": "Build cross-platform mobile apps using React Native and JavaScript.",
-    "category": "Mobile Development",
-    "image": "https://www.pexels.com/photo/woman-using-smartphone-for-online-shopping-sitting-in-armchair-6331237/",
-    "price": 12999,
-    "level": "Advanced",
-    "status": "Published",
-    "enrollments": [{ "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" }],
-    "sections": [
-      {
-        "sectionId": "5k7l9m1n-3o5p-7q9r-1s3t-5u7v9w1x3y5z",
-        "sectionTitle": "Getting Started with React Native",
-        "sectionDescription": "Learn the basics of React Native development.",
-        "chapters": [
-          {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Video",
-            "title": "Setting Up Your Development Environment",
-            "content": "https://example.com/videos/react-native-setup.mp4",
-            "video": "https://example.com/videos/react-native-setup.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
-            "type": "Text",
-            "title": "React Native Basics",
-            "content": "Learn about functions, objects, and other core concepts in JavaScript...",
-            "comments": []
-          }
-        ]
-      }
-    ]
   }
 ]
