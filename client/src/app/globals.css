@@ -1284,11 +1284,11 @@ input[type="color"] {
 }
 
 .nondashboard-navbar__container {
-  @apply flex justify-between items-center w-3/4 py-8;
+  @apply flex justify-between items-center w-3/4 py-8 max-sm:gap-5;
 }
 
 .nondashboard-navbar__search {
-  @apply flex justify-between items-center gap-14;
+  @apply flex justify-between items-center sm:gap-14 gap-3;
 }
 
 .nondashboard-navbar__brand {
@@ -1320,11 +1320,11 @@ input[type="color"] {
 }
 
 .nondashboard-navbar__auth-button--login {
-  @apply text-customgreys-dirtyGrey hover:bg-customgreys-darkerGrey hover:text-white-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border-customgreys-dirtyGrey border-[1px] text-sm sm:text-base;
+  @apply text-customgreys-dirtyGrey hover:bg-customgreys-darkerGrey hover:text-white-50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border-customgreys-dirtyGrey border-[1px] text-sm sm:text-base text-nowrap;
 }
 
 .nondashboard-navbar__auth-button--signup {
-  @apply bg-indigo-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-primary-600 hover:text-customgreys-primarybg text-sm sm:text-base;
+  @apply bg-indigo-600 px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-primary-600 hover:text-customgreys-primarybg text-sm sm:text-base text-nowrap;
 }
 
 /* Add these classes for group hover effects */

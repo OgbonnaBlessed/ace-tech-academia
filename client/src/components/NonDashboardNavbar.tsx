@@ -21,12 +21,7 @@ const NonDashboardNavbar = () => {
                         className='nondashboard-navbar__brand'
                     >
                         <span className='md:hidden'>
-                            <Image 
-                                src="/logo.png"
-                                alt="logo" 
-                                width={120}
-                                height={120}                          
-                            />
+                            Ace
                         </span>
                         <span className='hidden md:block'>ACE TECH ACADEMIA</span>
                     </Link>
