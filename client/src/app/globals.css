@@ -143,12 +143,12 @@ input[type="color"] {
 }
 
 .search__selected-course {
-  @apply basis-2/5 max-w-full min-w-[350px] h-fit border-2 border-primary-600 bg-customgreys-secondarybg overflow-hidden rounded-lg;
+  @apply basis-2/5 max-w-full w-[350px] h-fit border-2 border-primary-600 bg-customgreys-secondarybg overflow-hidden rounded-lg;
 }
 
 /* Selected Course Component */
 .selected-course {
-  @apply overflow-hidden py-9 px-9;
+  @apply overflow-hidden py-9 px-9 max-w-full;
 }
 
 .selected-course__title {
