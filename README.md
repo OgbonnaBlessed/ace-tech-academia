@@ -97,4 +97,4 @@ Organized for clear separation of concerns between frontend, backend, and shared
    git push origin feature/branch-name
 5. Open a pull request (PR) for review before merging into develop
 
-[Project Documentation](https://docs.google.com/document/d/1O82YTVqZ-_SUhHJcMBG5jeNwFkb9wCF6QOkoGKuQyy4/edit?usp=sharing)
+[Project Documentation](https://docs.google.com/document/d/18ldFV85UjxMgqnB8Ckf5kj555j7e1FRC7fahztgGrxE/edit?usp=drivesdk)
